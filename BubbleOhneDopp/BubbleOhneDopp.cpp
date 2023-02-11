@@ -28,7 +28,7 @@ int main()
 			}
 			else
 			{
-				boxnr = rand() % 90 + 1;
+				boxnr = rand() % 98 + 1;
 			}
 		} while (n >= 0);
 		array1[m] = boxnr;
@@ -38,8 +38,20 @@ int main()
 	// unsortiert ausgeben
 
 	for (int x = 0; x < 20; x++) {
-		cout << "Unsortierte Box Nr: " << (x+1) << " : " << array1[x] << endl;
+		cout << "Zufallszahl f"<<char(129)<<"r Box Nr: " << (x+1) << " : " << array1[x] << endl;
 	}
+
+	cout << "Startaufstellung der Boxen ist: ";
+	
+	for (int x = 0; x < 20; x++) {
+		if (x != 19)
+			cout << array1[x] << ", ";
+		else
+			cout << array1[x] << endl;
+	}
+
+
+	cout << "Starte Bubblesort..." << endl;
 
 	// sortieren 
 	do {
@@ -61,11 +73,15 @@ int main()
 		}max--;
 	} while (max > 0);
 
-	cout << "Sortiert: " << endl;
+	cout << "Aufstellung der Boxen sortiert: ";
 
 	for (int x = 0; x < 20; x++) {		
-		cout << array1[x] << ", ";
+		if (x != 19)
+			cout << array1[x] << ", ";
+		else
+			cout << array1[x];
 	}
+	cout << "\n\n";  
 	return 0;
 }
 
